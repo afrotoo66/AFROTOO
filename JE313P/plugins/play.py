@@ -129,7 +129,7 @@ btnn =[
 
 
 #play
-@JE313P.on(events.NewMessage(pattern="^[?!/]تشغيل"))
+@JE313P.on(events.NewMessage(pattern="تشغيل"))
 async def play(event):
     title = ' '.join(event.text[5:])
     replied = await event.get_reply_message()
@@ -226,7 +226,7 @@ async def play(event):
 
 
 #end
-@JE313P.on(events.NewMessage(pattern="^[/?!]انهاء"))
+@JE313P.on(events.NewMessage(pattern="ايقاف"))
 @is_admin
 async def vc_end(event, perm):
     chat_id = event.chat_id
@@ -244,7 +244,7 @@ async def vc_end(event, perm):
 
 
 
-@JE313P.on(events.NewMessage(pattern="^[?!/]فيديو"))
+@JE313P.on(events.NewMessage(pattern="فيديو"))
 async def vplay(event):
     if Config.HEROKU_MODE == "ENABLE":
         await event.reply("- لا يمكنك استخدام هذا الامر لانك تستخدم هيروكو في التنصيب")
@@ -407,7 +407,7 @@ async def vplay(event):
 
 
 #playlist
-@JE313P.on(events.NewMessage(pattern="^[?!/]التشغيل"))
+@JE313P.on(events.NewMessage(pattern="التشغيل"))
 @is_admin
 async def vc_playlist(event, perm):
     chat_id = event.chat_id
@@ -454,7 +454,7 @@ async def leavevc(event, perm):
 
 
 
-@JE313P.on(events.NewMessage(pattern="^[?!/]تخطي"))
+@JE313P.on(events.NewMessage(pattern="تخطي"))
 @is_admin
 async def vc_skip(event, perm):
     chat_id = event.chat_id
@@ -483,7 +483,7 @@ async def vc_skip(event, perm):
             await event.reply(DELQUE)
 
 
-@JE313P.on(events.NewMessage(pattern="^[?!/]ايقاف"))
+@JE313P.on(events.NewMessage(pattern="ايقاف"))
 @is_admin
 async def vc_pause(event, perm):
     chat_id = event.chat_id
@@ -498,7 +498,7 @@ async def vc_pause(event, perm):
 
 
 
-@JE313P.on(events.NewMessage(pattern="^[?!/]استئناف"))
+@JE313P.on(events.NewMessage(pattern="استئناف"))
 @is_admin
 async def vc_resume(event, perm):
     chat_id = event.chat_id

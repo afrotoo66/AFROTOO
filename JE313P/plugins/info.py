@@ -15,10 +15,10 @@ MISC_HELP = """
 
 !ايدي
 لعرض معلومات المستخدم بالرد عليه
-[𖠄 AFROTOO 𖠄](https://t.me/T_Y_E_X)
+[𖠄 ᯓ 「𝚂𝙾𝚞𝚁𝚂 𝙰𝙵𝚁𝙾𝚃𝙾𝙾」، ⦃𓏛 𖠄](https://t.me/T_Y_E_X)
 """
 
-@JE313P.on(events.NewMessage(pattern="^[!?/]الايدي"))
+@JE313P.on(events.NewMessage(pattern="الايدي"))
 async def id(event):
 
     if event.is_private:
@@ -37,7 +37,7 @@ async def id(event):
 
     await event.reply(f"المستخدم {msg.sender.first_name} /n الايدي `{msg.sender_id}`.")
  
-@JE313P.on(events.NewMessage(pattern="^[!?/]ايدي ?(.*)"))
+@JE313P.on(events.NewMessage(pattern="ايدي ?(.*)"))
 async def info(event):
 
     sed = await JE313P(P(user_id=event.sender_id, offset=42, max_id=0, limit=80))
